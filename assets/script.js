@@ -14,6 +14,14 @@ const slides = [
 	{
 		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
+	},
+	{
+		"image":"slide3.jpg",
+		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
+	},
+	{
+		"image":"slide4.png",
+		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
 
@@ -28,6 +36,16 @@ let currentSlide = 0;
 const lastSlide = slides.length - 1;
 
 const selectedDotClass = 'dot_selected';
+
+
+
+slides.forEach(slide => {
+ const newDot =	document.createElement("div");
+ newDot.classList.add("dot");
+ document.querySelector(".dots").appendChild(newDot);
+ document.querySelectorAll(".dot")[currentSlide].classList.add(selectedDotClass);
+});
+
 
 // Fonction permettant de changer de slide après évènement
 function updateSlide () {
